@@ -88,6 +88,13 @@
   color:#ccc;
 }
 
+
+.form_container p{
+  width:100%;
+  text-align:center;
+  border-bottom: 1px solid #ccc;
+  margin:10px 20px;
+}
 .form_social_media{
   width:460px;
   height:auto;
@@ -96,11 +103,6 @@
 .form_social_btn{
   width:440px;
   height:60px;
-}
-.social_btn_fb{
-  width:440px;
-  height:60px;
-  margin-bottom: 15px;
 }
 span i{
   width:40px;
@@ -116,4 +118,76 @@ span i{
   background-color:#fff;
   border:2px solid #ccc;
   border-radius:10px;
+}
+.form_social_btn input:hover{
+  border:2px solid #000;
+}
+
+
+
+
+.app-wrapper{
+  background: #fff;
+  box-shadow: inset 2px 2px 5px 5px #eceff5,
+              3px 3px 4px 3px #e4f6fc;
+  min-width:350px;
+  min-height:500px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius:5px;
+}
+.title{
+  color: #5b7ff7;
+  text-align:center;
+  margin:20px 0px 20px 0px;
+}
+.name,.email,.password,.confirmpassword,.terms{
+  margin:20px;
+  color:#969292;
+  font-size:16px;
+}
+.terms{
+  margin-bottom: 30px;
+}
+.input{
+  height:32px;
+  font-size:14px;
+  outline:none;
+  width:100%;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: 2px solid #000;
+  border-left-style: none;
+}
+.inputcheck{
+  height:32px;
+  font-size:14px;
+  outline:none;
+}
+.error{
+  color: #ff0000;
+}
+.submit{
+  display:flex;
+  text-transform:uppercase;
+  font-size:16px;
+  border-radius:25px;
+  color:white;
+  padding:10px 30px;
+  background: #5ab3b3;
+  box-shadow: 3px 3px 4px 3px #bbbbbb;
+  outline: 1px solid transparent;
+  border:none;
+  margin:auto;
+  transition: all 0.1s;
+}
+button:active{
+  transform: translateY(2px);
+}
+.form-success{
+  display: flex;
+  justify-content: center;
+  margin-top:250px;
+  min-width:370px;
+  color:#f80759;
 }
