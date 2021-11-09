@@ -6,13 +6,15 @@ export default function Signup() {
       <div className="header_form">
         <h4>Log in or sign up</h4>
       </div>
-      <hr />
+      <p className="line"><span>  </span> </p>
+      {/* <hr /> */}
       <div className="form_container">
         <div className="header_title">
           <h3>Welcome to Airbnb</h3>
         </div>
+        <form>
         <div className="form_input">
-          <label>Country/Region</label>
+          <label for="countries">Country/Region</label>
           <select id="countries_select" name="countries">
             <option value="91IN">India (+91)</option>
             <option value="93AF">Afghanistan (+93)</option>
@@ -64,11 +66,10 @@ export default function Signup() {
         <div className="form_btn">
           <input type="submit" value="Continue" />
         </div>
-      {/* <div className="hr_line">
-        <hr className="line"/> */}
-        <p><span className="line"> or  </span> </p>
-        {/* <hr width="50%" className="line_right"/> 
-      </div> */}
+        
+      <div className="hr_line">
+        <p className="line"><span> or  </span> </p>
+      </div> 
       <div className="form_social_media">
         <div className="form_social_btn">
           <span><i className="fab fa-facebook"></i></span>
@@ -83,10 +84,11 @@ export default function Signup() {
           <input type="button" value="Continue With Apple" />
         </div>
         <div className="form_social_btn">
-          <span><i className="fab fa-email"></i></span>
+          <span><i className="far fa-envelope"></i></span>
           <input type="button" value="Continue With email" />
         </div>
       </div>
+      </form>
       </div>
     </div>
   );

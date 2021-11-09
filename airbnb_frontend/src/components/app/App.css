@@ -17,6 +17,17 @@
   line-height: 60px;
   text-align:center;
 }
+.header_back{
+  margin-left:10px;
+  text-align:left;
+  float:left;
+}
+h4{
+  width:150px;
+  height:40px;
+  text-align:center;
+  margin-left:35%;
+}
 .form_container{
   width:500px;
   padding:30px 30px 20px 30px;
@@ -67,34 +78,17 @@
   border-radius:10px;
   margin:10px 0px;
 }
-.hr_line{
-  width:90%;
-  height:0px;
-  margin-top:10px;
-  /* background-color: rgb(209, 145, 145); */
-  /* line-height:20px; */
-}
-.hr_line .line{
-  width:45%;
-  float:left;
-}
-.hr_line span{
-  height:-20px;
-  /* text-align:center; */
-}
-.hr_line .line_right{
-  width:50%;
-  float:right;
-  color:#ccc;
-}
 
 
-.form_container p{
+
+.hr_line .line,.container .line{
   width:100%;
   text-align:center;
   border-bottom: 1px solid #ccc;
-  margin:10px 20px;
+  margin:10px 0px;
 }
+
+/* bottom part signup by using other apps */
 .form_social_media{
   width:460px;
   height:auto;
@@ -105,8 +99,10 @@
   height:60px;
 }
 span i{
-  width:40px;
-  height:40px;
+  width:20px;
+  height:20px;
+  text-align:center;
+  line-height:20px;
   background-color:#f0205e;
 }
 .form_social_btn input{
@@ -124,7 +120,10 @@ span i{
 }
 
 
-
+.input_info{
+  margin:5px 0px 10px 0px;
+  font-size:14px;
+}
 
 .app-wrapper{
   background: #fff;
