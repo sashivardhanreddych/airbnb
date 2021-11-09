@@ -64,26 +64,26 @@ export default function Signup() {
         <div className="form_btn">
           <input type="submit" value="Continue" />
         </div>
-      <div class="hr_line">
-      <hr className="line" />
-      {/* <span className="line"> or  </span> */}
-      <hr width="50%" className="line_right" />
+      <div className="hr_line">
+        <hr className="line"/>
+        {/* <span className="line"> or  </span>  */}
+        <hr width="50%" className="line_right"/> 
       </div>
       <div className="form_social_media">
-        <div className="form_social_btn">
+        <div className="form_social_btn" id="social_btn_fb">
           <span><i className="fab fa-facebook"></i></span>
           <input type="button" value="Continue With Facebook" />
         </div>
         <div className="form_social_btn">
-          <span><i className="fab fa-facebook"></i></span>
+          <span><i className="fab fa-google"></i></span>
           <input type="button" value="Continue With Google" />
         </div>
         <div className="form_social_btn">
-          <span><i className="fab fa-facebook"></i></span>
+          <span><i className="fab fa-apple"></i></span>
           <input type="button" value="Continue With Apple" />
         </div>
         <div className="form_social_btn">
-          <span><i className="fab fa-facebook"></i></span>
+          <span><i className="fab fa-email"></i></span>
           <input type="button" value="Continue With email" />
         </div>
       </div>
