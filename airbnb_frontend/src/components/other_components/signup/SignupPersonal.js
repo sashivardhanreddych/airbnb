@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link} from 'react-router-dom';
 import Validation from "./Validation";
 
 const SignupPersonal = () => {
@@ -25,7 +26,9 @@ const SignupPersonal = () => {
       <div className="header_form">
         <div className="header_back">
           <span>
-            <i className="fas fa-chevron-left"></i>{" "}
+            <Link to="/">
+             <i className="fas fa-chevron-left"></i>
+             </Link>
           </span>
         </div>
         <h4>Finish signing up</h4>

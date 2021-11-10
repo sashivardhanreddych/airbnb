@@ -10,11 +10,10 @@
 
  const mongoose = require('mongoose');
  const userQuerySchema = mongoose.Schema({
-     name: { type: String },
-     email: { type: String },
-     number: {type: Number},
-     message: { type: String }
- 
+     firstname: { type: String, required},
+     lastname: { type: String },
+     date: {type: Date},
+     email: { type: String }
  });
  const User=mongoose.model("User", userQuerySchema);
  module.exports = User

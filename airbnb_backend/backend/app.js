@@ -19,7 +19,7 @@ const bodyParser = require("body-parser");
 const index_main = require("../index.js");
 const user_post = require("../models/contactus");
 
-const PORT = 1109;
+const PORT = 1110;
 
 /**
  * Post Schema
@@ -29,10 +29,10 @@ router.post("/", async (req, res) => {
   console.log(req.body);
   const users = new user_post({
     //client side data
-    name: req.body.name,
-    email: req.body.email,
-    number: req.body.number,
-    message: req.body.message,
+    firstname: req.body.firstname,
+    firstname: req.body.firstname,
+    date: req.body.Date,
+    email: req.body.email
   });
   try {
     const a = await users.save();

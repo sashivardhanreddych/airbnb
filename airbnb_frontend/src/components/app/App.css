@@ -97,13 +97,24 @@ h4{
 .form_social_btn{
   width:440px;
   height:60px;
+  /* line-height:60px; */
+  display:flex;
 }
-span i{
+
+.form_social_btn span{
+  width:30px;
+  height:30px;
+  line-height:70px;
+  float:left;
+}
+.form_social_btn span i{
   width:20px;
   height:20px;
   text-align:center;
   line-height:20px;
-  background-color:#f0205e;
+  color:rgb(219, 106, 223);
+  /* margin:0px; */
+  /* background-color:#f0205e; */
 }
 .form_social_btn input{
   width:440px;
@@ -114,6 +125,7 @@ span i{
   background-color:#fff;
   border:2px solid #ccc;
   border-radius:10px;
+  float:left;
 }
 .form_social_btn input:hover{
   border:2px solid #000;
