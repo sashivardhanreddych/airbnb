@@ -5,7 +5,7 @@ const SignupPersonal = () => {
   const [values, setValues] = useState({
     firstname: "",
     lastname: "",
-    dateofbirth: "",
+    date: "",
     email: "",
   });
 
@@ -66,13 +66,8 @@ const SignupPersonal = () => {
             {/* <label htmlFor="start">
               <strong>DateofBirth:</strong>
             </label> */}
-            <input
-              type="date"
-              id="date"
-              name="date"
-              placeholder="Date of Birth"
-              value={values.date}
-              onChange={handleChange}
+            <input type="date" id="date" name="date"
+              placeholder="Date of Birth" value={values.date} onChange={handleChange}
             ></input>
           </div>
           <p>
