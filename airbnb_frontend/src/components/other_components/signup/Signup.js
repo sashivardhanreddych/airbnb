@@ -1,7 +1,22 @@
-import React from "react";
-import {Link} from 'react-router-dom';
+import React, { useState } from "react";
+import Validation from "./Validation";
 
-export default function Signup() {
+const Signup = () => {
+  const [values, setValues] = useState({
+    phone: "",
+  });
+
+  const [errors, setErrors] = useState({});
+  const handleChange = (event) => {
+    setValues({
+      ...values,
+      [event.target.name]: event.target.value,
+    });
+  };
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    setErrors(Validation(values));
+  };
   return (
     <div className="container">
       <div className="header_form">
@@ -15,7 +30,7 @@ export default function Signup() {
         </div>
         <form>
         <div className="form_input">
-          <label for="countries">Country/Region</label>
+          <label For="countries">Country/Region</label>
           <select id="countries_select" name="countries">
             <option value="91IN">India (+91)</option>
             <option value="93AF">Afghanistan (+93)</option>
@@ -50,13 +65,16 @@ export default function Signup() {
           {/* <div id="tel_code"></div> */}
           <div className="form_input_con">
             <input
-              type="phone"
+              type="number"
               name="phone"
               id="form_input_phone"
               placeholder="Phone Number"
+              value={values.phone}
+              onChange={(e)=>handleChange(e)}
             />
           </div>
         </div>
+        {errors.phone && <p className="error">{errors.phone}</p>}
         <div className="form_text">
           <p>
             We’ll call or text you to confirm your number. Standard message and
@@ -66,7 +84,7 @@ export default function Signup() {
         </div>
         <div className="form_btn">
           <a href = "/signup">
-          <input type="button" value="Continue" />
+          <input type="submit" value="Continue" onClick={(e)=>handleFormSubmit(e)}/>
           </a>
           
         </div>
@@ -97,3 +115,6 @@ export default function Signup() {
     </div>
   );
 }
+
+
+export default Signup;

@@ -2,16 +2,20 @@ import '../../app/App.css';
 
 const Validation = (values) => {
     let errors={};
-
+    if(!values.phone){
+        errors.phone = "Phone Number is required";
+    }
     if(!values.fullname){
-        errors.fullname="Name is required";
+        errors.fullname="Full Name is required";
     }
-    else if(!/^([A-Z][a-z]*((\s[A-Za-z])?[a-z]*)*)$/.test(values.fullname)){
-        errors.fullname="Each word of name capatilized";
+    else if(values.fullname.length<3 && values.fullname.length<15){
+        errors.fullname="Full Name must between 3 to 15 characters";
     }
-    // pattern="[A-zA-Z]{1,13}" 
-    else if(values.fullname.length>5 && values.fullname.length<25){
-        errors.fullname="Full Name must between 5 to 25 characters";
+    if(!values.lastname){
+        errors.lastname="Last Name is required";
+    }
+    else if(values.lastname.length>3 && values.lastname.length<15){
+        errors.lastname="Last Name must between 3 to 15 characters";
     }
     if(!values.email){
         errors.email="Email is required";

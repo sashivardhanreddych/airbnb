@@ -11,14 +11,15 @@ const SignupPersonal = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const handleChange = () => {
+
+  const handleChange = (event) => {
     setValues({
       ...values,
-      [Event.target.name]: Event.target.value,
+      [event.target.name]: event.target.value,
     });
   };
-  const handleFormSubmit = (Event) => {
-    Event.preventDefault();
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
     setErrors(Validation(values));
   };
   return (
@@ -34,7 +35,7 @@ const SignupPersonal = () => {
         <h4>Finish signing up</h4>
       </div>
       <p className="line">
-        <span> </span>{" "}
+        <span> </span>
       </p>
       <div className="form_container">
         <form className="form-wrapper">
@@ -46,10 +47,10 @@ const SignupPersonal = () => {
               name="firstname"
               placeholder="First Name"
               value={values.firstname}
-              onChange={handleChange}
-            />
-            {errors.firstname && <p classNmae="error">{errors.firstname}</p>}
+              onChange={(e)=>handleChange(e)}
+            />    
           </div>
+          {errors.firstname && <p className="error">{errors.firstname}</p>}
 
           <div className="form_input">
             {/* <label className="label">First Name</label> */}
@@ -59,21 +60,21 @@ const SignupPersonal = () => {
               name="lastname"
               value={values.lastname}
               placeholder="Last Name"
-              onChange={handleChange}
-            />
-            {errors.lastname && <p classNmae="error">{errors.lastname}</p>}
+              onChange={(e)=>handleChange(e)}
+            />    
           </div>
+          {errors.lastname && <p className="error">{errors.lastname}</p>}
           <p className="input_info">Make sure it matches the name as per the government ID.</p>
           {errors.Lastname && <p classNmae="error">{errors.Lastname}</p>}
           <div className="form_input">
             {/* <label htmlFor="start">
               <strong>DateofBirth:</strong>
             </label> */}
-            <input type="date" id="date" name="date"
-              placeholder="Date of Birth" value={values.date} onChange={handleChange}
+            <input type="Date" id="date" name="date"
+              placeholder="Date of Birth" value={values.date} onChange={(e)=>handleChange(e)}
             ></input>
           </div>
-          <p>
+          <p className="input_info">
             To signup you need to be atleast 18.your birthday won't share with
             other people who use Airbnb.{" "}
           </p>
@@ -83,28 +84,29 @@ const SignupPersonal = () => {
               className="input"
               type="Email"
               name="email"
-              placeholder="Email address"
+              placeholder="Email"
               value={values.email}
-              onChange={handleChange}
+              onChange={(e)=>handleChange(e)}
             />
-            <p>We'll email you trip confirmations and receipts</p>
-            {errors.email && <p classNmae="error">{errors.email}</p>}
           </div>
+          {errors.email && <p className="error">{errors.email}</p>}
+          <p className="input_info">We'll email you trip confirmations and receipts</p>
 
-          <button type="submit" className="submit" onClick={handleFormSubmit}>
-            Sign Up
-          </button>
           <div className="tacbox">
             <input id="checkbox" type="checkbox" />
             <span>
-              By selecting<strong>Agree and continue</strong>,I agree to
-              Airbnb's
+              <p className="input_info">By selecting<strong>Agree and continue</strong>,I agree to
+              Airbnb's </p>
               <a href=".">
                 Terms of services,payment terms of services
               </a>,and <a href="."> Nondiscrimination policy</a> and acknowledge
               the
               <a href="."> privacy policy</a>
             </span>
+          </div>
+
+          <div className="form_btn">
+            <input type="submit" value="Agree and Continue" onClick={(e)=>handleFormSubmit(e)}/>
           </div>
         </form>
       </div>
