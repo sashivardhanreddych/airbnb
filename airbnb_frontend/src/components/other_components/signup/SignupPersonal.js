@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {Link} from 'react-router-dom';
-import Validation from "./Validation";
+import ValidationSignup from "./Validation";
 
 const SignupPersonal = () => {
   const [values, setValues] = useState({
@@ -20,7 +20,7 @@ const SignupPersonal = () => {
   };
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    setErrors(Validation(values));
+    setErrors(ValidationSignup(values));
   };
   return (
     <div className="container">

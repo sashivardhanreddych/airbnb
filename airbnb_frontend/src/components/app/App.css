@@ -50,6 +50,7 @@ h4{
   margin-bottom:10px;
 }
 
+
 .form_input input,select{
   width:95%;
   height: 30px;
@@ -70,6 +71,8 @@ h4{
 .form_text p{
   font-size:12px;
 }
+
+
 .form_btn input{
   width:100%;
   height:40px;
@@ -191,9 +194,9 @@ h4{
   color: #ff0000;
 }
 
-input[type=submit]:active{
+/* input[type=submit]:active{
   transform: translateY(2px);
-}
+} */
 .form-success{
   display: flex;
   justify-content: center;

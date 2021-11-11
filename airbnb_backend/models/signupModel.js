@@ -9,11 +9,11 @@
  */
 
  const mongoose = require('mongoose');
- const userQuerySchema = mongoose.Schema({
-     firstname: { type: String, required},
+ const userPersonalInfoSchema = mongoose.Schema({
+     firstname: { type: String, required:true},
      lastname: { type: String },
-     date: {type: Date},
+     birthdate: {type: Date},
      email: { type: String }
  });
- const User=mongoose.model("User", userQuerySchema);
- module.exports = User
+ const User_info=mongoose.model("User_info", userPersonalInfoSchema);
+ module.exports = User_info;
