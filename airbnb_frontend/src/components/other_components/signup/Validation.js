@@ -8,28 +8,28 @@ const ValidationSignup = (values) => {
         errors.phone = "Phone Number is required";
     }
 
-		// verifying existence of full name
+		// verifying existence of first name
     if(!values.firstname){
         errors.firstname="First Name is required";
     }
-    else if(values.firstname.length>3 && values.firstname.length<15){
-        errors.firstname="First Name must between 3 to 15 characters";
+    else if(!(values.firstname.length>2 && values.firstname.length<20)){
+        errors.firstname="First Name must between 3 to 20 characters";
     }
-
+    
 		// verifying existence of last name
     if(!values.lastname){
         errors.lastname="Last Name is required";
     }
-    else if(values.lastname.length>3 && values.lastname.length<15){
+    else if(!(values.lastname.length>3 && values.lastname.length<15)){
         errors.lastname="Last Name must between 3 to 15 characters";
     }
 
-    	// verifying existence of last name
-    if(!values.lastname){
-        errors.lastname="Last Name is required";
+    	// verifying existence of birthdate
+    if(!values.birthdate){
+        errors.birthdate="Your birthdate is invalid";
     }
-    else if(values.lastname.length>3 && values.lastname.length<15){
-        errors.lastname="Last Name must between 3 to 15 characters";
+    else if(values.birthdate.length>3 && values.birthdate.length<15){
+        errors.birthdate="your birthdate possible region";
     }
 
 		// verifying existence of email

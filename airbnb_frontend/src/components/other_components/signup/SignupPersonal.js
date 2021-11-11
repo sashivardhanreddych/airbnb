@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import {Link} from 'react-router-dom';
 import ValidationSignup from "./Validation";
+import Control from "../../controllers/Control";
 
 const SignupPersonal = () => {
+
+  // Initializing and updating the values of fields
   const [values, setValues] = useState({
     firstname: "",
     lastname: "",
@@ -10,18 +13,46 @@ const SignupPersonal = () => {
     email: "",
   });
 
+  // Set the Errors of fields
   const [errors, setErrors] = useState({});
 
+  // Updating the value of fields
   const handleChange = (event) => {
     setValues({
       ...values,
       [event.target.name]: event.target.value,
     });
   };
+
+  // Submit the all values of fields and errors to render the browser
   const handleFormSubmit = (event) => {
     event.preventDefault();
     setErrors(ValidationSignup(values));
+
+    const body = { values };
+		console.log(body);
+		let url = "http://localhost:1110/signup";
+
+		const success = (res) => {
+			console.log("Success", res);
+			alert("User created successfully")
+		};
+
+		const failure = (err) => {
+			alert("Error", err);
+		};
+
+		Control.sendRequest(
+			url,
+			"post",
+			body,
+			false,
+			null,
+			success,
+			failure
+		);
   };
+
   return (
     <div className="container">
       <div className="header_form">
@@ -92,16 +123,16 @@ const SignupPersonal = () => {
           {errors.email && <p className="error">{errors.email}</p>}
           <p className="input_info">We'll email you trip confirmations and receipts</p>
 
-          <div className="tacbox">
+          <div className="ticbox">
             <input id="checkbox" type="checkbox" />
             <span>
               <p className="input_info">By selecting<strong>Agree and continue</strong>,I agree to
               Airbnb's </p>
-              <a href=".">
+              <a href="." className="input_info">
                 Terms of services,payment terms of services
-              </a>,and <a href="."> Nondiscrimination policy</a> and acknowledge
+              </a>,and <a href="." className="input_info"> Nondiscrimination policy</a> and acknowledge
               the
-              <a href="."> privacy policy</a>
+              <a href="." className="input_info"> privacy policy</a>
             </span>
           </div>
 
@@ -112,5 +143,5 @@ const SignupPersonal = () => {
       </div>
     </div>
   );
-};
+}
 export default SignupPersonal;

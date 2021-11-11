@@ -194,6 +194,9 @@ h4{
   color: #ff0000;
 }
 
+.ticboc span a{
+  font-size:12px;
+}
 /* input[type=submit]:active{
   transform: translateY(2px);
 } */

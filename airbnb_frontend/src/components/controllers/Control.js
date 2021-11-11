@@ -1,3 +1,4 @@
+//controller used to 
 class Controller {
 
 	sendRequest(url, requestType, requestBody, isAuthenticated, authToken, success, failure) {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Validation from "./Validation";
+import ValidationSignup from "./Validation";
 import { Link } from "react-router-dom";
 import Control from "../../controllers/Control";
 
@@ -24,11 +24,14 @@ const Signup = () => {
     // Submit the all values of fields and errors to render the browser
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    setErrors(Validation(values));
+    setErrors(ValidationSignup(values));
 
-		const body = {  };
-		console.log(body);
-		let url = "http://localhost:1109/signup";
+		// const body = { values };
+    // alert(values);
+		// console.log(values);
+    let body = values;
+    console.log(body);
+		let url = "http://localhost:1111/login";
 
 		const success = (res) => {
 			console.log("Success", res);
@@ -42,7 +45,7 @@ const Signup = () => {
 		Control.sendRequest(
 			url,
 			"post",
-			body,
+			values,
 			false,
 			null,
 			success,
@@ -66,7 +69,8 @@ const Signup = () => {
         <form>
           <div className="form_input">
             <label>Country/Region</label>
-            <select id="countries_select" name="countryCode" value={values.countryCode}>
+            <select id="countries_select" name="countryCode" value={values.countryCode}
+            onChange={(e) => handleChange(e)}>
               <option value=" ">Select Your Country Code</option>
               <option value="91IN">India (+91)</option>
               <option value="93AF">Afghanistan (+93)</option>

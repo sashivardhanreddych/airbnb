@@ -13,6 +13,9 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 app.use(express.json());
+
+const cors = require("cors")
+app.use(cors());
 const bodyParser = require("body-parser");
 
 // internal dependencies
