@@ -22,6 +22,7 @@ import Control from "../../controllers/Control";
 const Signup = () => {
     // Initializing and updating the values of fields
   const [values, setValues] = useState({
+    page:"1",
 		countryCode: "",
     phone: ""
   });
@@ -37,41 +38,15 @@ const Signup = () => {
     });
   };
     
-  const nextPage =() =>{
+  const nextPage = () =>{
     const [page, setPage] = useState(2)
-      page = "2"
+    setPage({
+      page : page + 1
+    })
   }
-    // Submit the all values of fields and errors to render the browser
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    setErrors(ValidationSignup(values));
 
-		// const body = { values };
-    // alert(values);
-		// console.log(values);
-    let body = values;
-    console.log(body);
-		let url = "http://localhost:1111/login";
 
-		const success = (res) => {
-			console.log("Success", res);
-			alert("User created successfully")
-		};
-
-		const failure = (err) => {
-			console.log("Error", err);
-		};
-
-		Control.sendRequest(
-			url,
-			"post",
-			values,
-			false,
-			null,
-			success,
-			failure
-		);
-  };
+   
 
 
 

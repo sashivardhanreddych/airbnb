@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Signup from "../other_components/signup/Signup";
 import SignupPersonal from "../other_components/signup/SignupPersonal";
 import Form from "../other_components/signup/Form";
-import Otp from "../other_components/login/Otp";
+import Otp from "../other_components/otp/Otp";
 // import SignupFormSuccess from "../other_components/signup/SignupFormSuccess";
 
 function App() {
