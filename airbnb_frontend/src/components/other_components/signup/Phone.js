@@ -1,3 +1,10 @@
+/**
+ * @author Sashi Vardhan Reddy
+ * @version 0.0.1
+ * @date 11/11/2021
+ * ...
+ */
+
 import React from 'react'
 
 export default function Phone() {

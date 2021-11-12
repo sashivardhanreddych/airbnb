@@ -1,8 +1,23 @@
+/**
+ * @author Sashi Vardhan Reddy
+ * @version 0.0.1
+ * @date 11/11/2021
+ * ...
+ */
+
 import React, { useState } from "react";
 import {Link} from 'react-router-dom';
 import ValidationSignup from "./Validation";
 import Control from "../../controllers/Control";
 
+
+/**
+* Function that uses to update the form elements and stored in the database
+* when we enter agree and continue buttoon
+* @author   Sashi Vardhan Reddy
+* @param    {String}         input values from the UI
+* @return   {String}         Event success or failure message
+*/
 const SignupPersonal = () => {
 
   // Initializing and updating the values of fields
@@ -29,15 +44,17 @@ const SignupPersonal = () => {
     event.preventDefault();
     setErrors(ValidationSignup(values));
 
-    const body = { values };
+    const body =  values ;
 		console.log(body);
-		let url = "http://localhost:1110/signup";
+		let url = "http://localhost:1111/signup";
 
+    // success alert to render the browser
 		const success = (res) => {
 			console.log("Success", res);
 			alert("User created successfully")
 		};
 
+    // failure alert to render the browser
 		const failure = (err) => {
 			alert("Error", err);
 		};

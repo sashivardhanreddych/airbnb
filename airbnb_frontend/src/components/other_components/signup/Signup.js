@@ -1,8 +1,22 @@
+/**
+ * @author Sashi Vardhan Reddy
+ * @version 0.0.1
+ * @date 10/11/2021
+ * ...
+ */
+
 import React, { useState } from "react";
 import ValidationSignup from "./Validation";
 import { Link } from "react-router-dom";
 import Control from "../../controllers/Control";
 
+
+/**
+* Function that uses to update the form elements and continue to next page of registration
+* @author   Sashi Vardhan Reddy
+* @param    {String}         input values from the UI
+* @return   {String}         Event success or failure message
+*/
 const Signup = () => {
     // Initializing and updating the values of fields
   const [values, setValues] = useState({
@@ -100,6 +114,7 @@ const Signup = () => {
               <option value="1US">United Status (+1)</option>
             </select>
           </div>
+          {errors.countryCode && <p className="error">{errors.countryCode}</p>}
           <div className="form_input" id="form_input_number">
             {/* <label>Phone Number</label> */}
             {/* <div id="tel_code"></div> */}

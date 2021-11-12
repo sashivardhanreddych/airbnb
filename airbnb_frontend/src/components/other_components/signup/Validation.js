@@ -1,8 +1,20 @@
+/**
+ * @author Sashi Vardhan Reddy
+ * @version 0.0.1
+ * @date 11/11/2021
+ * ...
+ */
+
 import '../../app/App.css';
 
 const ValidationSignup = (values) => {
     let errors={};
-		
+	
+    // verifying existence of phone
+    if(!values.countryCode){
+        errors.countryCode = "Country Code is required";
+    }
+
 		// verifying existence of phone
     if(!values.phone){
         errors.phone = "Phone Number is required";

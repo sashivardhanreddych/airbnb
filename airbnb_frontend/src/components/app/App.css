@@ -3,6 +3,8 @@
   padding:0px;
   box-sizing: border-box;
 }
+
+/* It contains the input elements and headers of the form */
 .container{
   width:500px;
   display:grid;
@@ -83,7 +85,9 @@ h4{
   border-radius:10px;
   margin:10px 0px;
 }
-
+.otp_text{
+  font-size:12px
+}
 
 
 .hr_line .line,.container .line{
