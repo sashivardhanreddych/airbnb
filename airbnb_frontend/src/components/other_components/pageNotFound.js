@@ -1,10 +1,16 @@
 import React from 'react'
 
-const pageNotFound = ()=> {
+
+/**
+* Function that used to render the error page handling
+* @param    {String}        Response from the server
+* @return   {String}        Event success or failure message
+*/
+const PageNotFound = ()=> {
     return (
         <div>
-            <img src="public/404-error.jpg" alt="Page Not Found Image"></img>
+            <img src="%PUBLIC_URL%/404error.jpg" alt="Page Not Found Image"></img>
         </div>
     )
 }
-export default pageNotFound;
+export default PageNotFound;

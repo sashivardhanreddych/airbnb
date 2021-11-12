@@ -4,20 +4,18 @@
   box-sizing: border-box;
 }
 
-/* It contains the input elements and headers of the form */
+/* container styles of the page starts here */
 .container{
   width:500px;
   display:grid;
   border: 1px solid rgb(216, 216, 216);
   border-radius:20px;
   margin:5% auto;
-  /* align-items:center; */
-  /* place-content:center; */
-  /* background-color: #cdd; */
 }
+
+/* Header title styles of the form */
 .header_form{
   height: 60px;
-  /* background-color: rgb(178, 252, 227); */
   line-height: 60px;
   text-align:center;
 }
@@ -35,13 +33,15 @@ h4{
 .header_otp{
   width:180px;
 }
+
+/* form container(fields) styles starts here */
 .form_container{
   width:500px;
   padding:30px 30px 20px 30px;
 }
 .header_title{
   height: 60px;
-  /* background-color: rgb(178, 219, 252); */
+  
 }
 .form_input{
   padding:5px 5px 5px 10px;

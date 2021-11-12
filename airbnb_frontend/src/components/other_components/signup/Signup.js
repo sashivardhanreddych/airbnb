@@ -7,7 +7,7 @@
 
 import React, { useState } from "react";
 import ValidationSignup from "./Validation";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Control from "../../controllers/Control";
 
 
@@ -22,7 +22,6 @@ import Control from "../../controllers/Control";
 const Signup = () => {
     // Initializing and updating the values of fields
   const [values, setValues] = useState({
-    page:"1",
 		countryCode: "",
     phone: ""
   });
@@ -38,18 +37,35 @@ const Signup = () => {
     });
   };
     
-  
+  // Submit the all values of fields and errors to render the browser
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    setErrors(ValidationSignup(values));
+    // alert(values);
+		// console.log(values);
+    let body = values;
+    console.log(body);
+		let url = "http://localhost:1111/login";
 
-  // const prevPage = () =>{
-  //   const [page, setPage] = useState(1)
-  //   setPage({
-  //     page : page - 1
-  //   })
-  // }
+		const success = (res) => {
+			console.log("Success", res);
+			alert("User created successfully")
+		};
 
+		const failure = (err) => {
+			console.log("Error", err);
+		};
 
-   
-
+		Control.sendRequest(
+			url,
+			"post",
+			values,
+			false,
+			null,
+			success,
+			failure
+		);
+  };
 
 
   /**
@@ -75,7 +91,6 @@ const Signup = () => {
       <p className="line">
         <span> </span>{" "}
       </p>
-      {/* <hr /> */}
       <div className="form_container">
         <div className="header_title">
           <h3>Welcome to Airbnb</h3>
@@ -115,9 +130,8 @@ const Signup = () => {
             </select>
           </div>
           {errors.countryCode && <p className="error">{errors.countryCode}</p>}
+          
           <div className="form_input" id="form_input_number">
-            {/* <label>Phone Number</label> */}
-            {/* <div id="tel_code"></div> */}
             <div className="form_input_con">
               <input type="number"
                 name="phone"
@@ -129,6 +143,7 @@ const Signup = () => {
             </div>
           </div>
           {errors.phone && <p className="error">{errors.phone}</p>}
+
           <div className="form_text">
             <p>
               We’ll call or text you to confirm your number. Standard message
@@ -136,15 +151,16 @@ const Signup = () => {
               <a href=".">Privacy Policy</a>
             </p>
           </div>
+
           <div className="form_btn">
-            {/* <Link to="/signup"> */}
+            <Link to="/signup">
               <input
                 type="button"
                 value="Continue"
-                // onClick={(e) => handleFormSubmit(e)}
-                onClick ={(page)=>nextPage(page)}
+                onClick={(e) => handleFormSubmit(e)}
+                // onClick ={(page)=>nextPage(page)}
               />
-            {/* </Link> */}
+            </Link>
           </div>
 
           <div className="hr_line">
@@ -152,6 +168,8 @@ const Signup = () => {
               <span> or </span>
             </p>
           </div>
+
+
           <div className="form_social_media">
             <div className="form_social_btn">
               <span>
@@ -159,18 +177,21 @@ const Signup = () => {
               </span>
               <input type="button" value="Continue With Facebook" />
             </div>
+
             <div className="form_social_btn">
               <span>
                 <i className="fab fa-google"></i>
               </span>
               <input type="button" value="Continue With Google" />
             </div>
+
             <div className="form_social_btn">
               <span>
                 <i className="fab fa-apple"></i>
               </span>
               <input type="button" value="Continue With Apple" />
             </div>
+
             <div className="form_social_btn">
               <span>
                 <i className="far fa-envelope"></i>

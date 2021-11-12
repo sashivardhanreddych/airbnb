@@ -54,12 +54,12 @@ const Otp = () => {
         <div className ="form_container">
             <p>Enter the code we've sent via SMS to 9010960607</p>
             <div className="otp_box">
-                <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')"/>
-                <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')"/>
-                <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')"/>
-                <input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')"/>
-                <input type="text" id="fifth" maxlength="1" onkeyup="clickEvent(this,'sixth')" />
-                <input type="text" id="sixth" maxlength="1" />
+                <input type="text" id='ist' maxLength="1" onKeyUp="clickEvent(this,'sec')"/>
+                <input type="text" id="sec" maxLength="1" onKeyUp="clickEvent(this,'third')"/>
+                <input type="text" id="third" maxLength="1" onKeyUp="clickEvent(this,'fourth')"/>
+                <input type="text" id="fourth" maxLength="1" onKeyUp="clickEvent(this,'fifth')"/>
+                <input type="text" id="fifth" maxLength="1" onKeyUp="clickEvent(this,'sixth')" />
+                <input type="text" id="sixth" maxLength="1" />
             </div>
         <p className="otp_text">Haven't received a code?<a href=".">More Options</a></p>
         </div>
