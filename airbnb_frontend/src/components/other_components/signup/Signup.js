@@ -38,12 +38,14 @@ const Signup = () => {
     });
   };
     
-  const nextPage = () =>{
-    const [page, setPage] = useState(2)
-    setPage({
-      page : page + 1
-    })
-  }
+  
+
+  // const prevPage = () =>{
+  //   const [page, setPage] = useState(1)
+  //   setPage({
+  //     page : page - 1
+  //   })
+  // }
 
 
    

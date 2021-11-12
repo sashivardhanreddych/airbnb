@@ -28,7 +28,7 @@ function App() {
             <Route exact path="/otp" render={()=><Otp/>} />
             <Route exact path="/signup" render={() => <SignupPersonal />} />
             <Route path="/form" render={() => <Form />} />
-            <Route path="/:page" render={() =><pageNotFound /> } />
+            <Route render={() =><pageNotFound /> } />
          
         </Switch>
       </Router>
