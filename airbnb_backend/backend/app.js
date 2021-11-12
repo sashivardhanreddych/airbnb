@@ -91,7 +91,7 @@ router.get("/", async (req, res) => {
 });
 
 /**
- * For Getting Paticular Schema
+ * For Getting Paticular Schema based on Id
  */
 
 router.get("/:id", async (req, res) => {
@@ -104,7 +104,7 @@ router.get("/:id", async (req, res) => {
 });
 
 /**
- * Patch Update
+ * Patch Update based on id
  */
 router.patch("/:id", async (req, res) => {
   try {
@@ -130,9 +130,9 @@ router.delete("/", async (req, res) => {
   }
 });
 
-// /**
-//  * Delete by Paticular id
-//  */
+  /**
+  * Delete by Paticular id
+  */
 router.delete("/:id", async (req, res) => {
   try {
     const a = await User.findByIdAndDelete(req.params.id);
@@ -157,7 +157,7 @@ app.use("*", (req, res, next) => {
   next(error);
 });
 
-
+// app listening at the port 1111
 app.listen(PORT, () => {
   console.log(`successfully listening at port ${PORT}`);
 });

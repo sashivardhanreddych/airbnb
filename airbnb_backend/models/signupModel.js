@@ -11,9 +11,9 @@
  const mongoose = require('mongoose');
  const userPersonalInfoSchema = mongoose.Schema({
      firstname: { type: String, required:true},
-     lastname: { type: String },
-     birthdate: {type: Date},
-     email: { type: String }
+     lastname: { type: String, required:true },
+     birthdate: {type: Date, required:true},
+     email: { type: String, required:true }
  });
  const User_info=mongoose.model("User_info", userPersonalInfoSchema);
  module.exports = User_info;

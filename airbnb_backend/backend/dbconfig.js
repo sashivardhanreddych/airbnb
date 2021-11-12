@@ -1,5 +1,5 @@
 /**
- * Summary. Contains connection of mongodb
+ * Summary. Contains connection or configuration information of mongodb 
  *
  * Description. This is the set of methods for usage of mongodb
  *  operations.  
@@ -19,11 +19,12 @@ const app = express();
 const userQuery = require("../models/signupModel");
 const mongoose = require("mongoose");
 
-
+// mongo db atlas uri
 const url="mongodb+srv://schandra:Sashi@cluster0.8jkos.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 // app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 
+// connection of mongodb through the url
 mongoose.connect(url,{
     useNewUrlParser:true,
     useUnifiedTopology:true

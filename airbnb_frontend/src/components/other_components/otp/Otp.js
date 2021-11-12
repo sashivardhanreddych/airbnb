@@ -13,8 +13,8 @@ import { Link } from "react-router-dom";
 
 /**
 * Function that creates useStates and handlechange of the events for the Otp Component
-* @author   Sashi Vardhan Reddy
-* @param    {Number} Otp    Value of an Otp
+*
+* @param    {Number} Otp     Value of an Otp
 * @return   {String}         Event success or failure message
 */
 

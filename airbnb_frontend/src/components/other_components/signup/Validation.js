@@ -7,6 +7,11 @@
 
 import '../../app/App.css';
 
+/**
+* Function that used to validate the field of the forms of various components
+* @param    {String}        Data from the user
+* @return   {String}        validate success or errors message will render in the browser
+*/
 const ValidationSignup = (values) => {
     let errors={};
 	

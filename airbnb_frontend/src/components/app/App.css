@@ -196,23 +196,8 @@ h4{
   text-align:center;
   margin:20px 0px 20px 0px;
 }
-.name,.email,.password,.confirmpassword,.terms{
-  margin:20px;
-  color:#969292;
-  font-size:16px;
-}
 .terms{
   margin-bottom: 30px;
-}
-.input{
-  height:32px;
-  font-size:14px;
-  outline:none;
-  width:100%;
-  border-top-style: none;
-  border-right-style: none;
-  border-bottom-style: 2px solid #000;
-  border-left-style: none;
 }
 .inputcheck{
   height:32px;
@@ -223,9 +208,6 @@ h4{
   color: #ff0000;
 }
 
-.ticboc span a{
-  font-size:12px;
-}
 /* input[type=submit]:active{
   transform: translateY(2px);
 } */

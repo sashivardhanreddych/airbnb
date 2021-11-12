@@ -12,6 +12,9 @@ import SignupFormSuccess from './SignupFormSuccess';
 /**
  * if Form is successfully sent the data then shows successful message component
  * if not error, then message will be rendered
+ * 
+ *  @param    {booleam}        true or false submitted form or not
+ *  @return   {String}         Event success or failure message and component
  **/
 
 const Form = () => {

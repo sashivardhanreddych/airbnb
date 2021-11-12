@@ -13,8 +13,8 @@ import Control from "../../controllers/Control";
 
 /**
 * Function that uses to update the form elements and stored in the database
-* when we enter agree and continue buttoon
-* @author   Sashi Vardhan Reddy
+* when we enter agree and continue button
+*
 * @param    {String}         input values from the UI
 * @return   {String}         Event success or failure message
 */
