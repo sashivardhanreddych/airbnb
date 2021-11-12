@@ -7,7 +7,7 @@
 
 import React, { useState } from "react";
 import ValidationSignup from "./Validation";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Control from "../../controllers/Control";
 
 
@@ -17,6 +17,8 @@ import Control from "../../controllers/Control";
 * @param    {String}         input values from the UI
 * @return   {String}         Event success or failure message
 */
+
+
 const Signup = () => {
     // Initializing and updating the values of fields
   const [values, setValues] = useState({
@@ -35,6 +37,10 @@ const Signup = () => {
     });
   };
     
+  const nextPage =() =>{
+    const [page, setPage] = useState(2)
+      page = "2"
+  }
     // Submit the all values of fields and errors to render the browser
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -66,6 +72,23 @@ const Signup = () => {
 			failure
 		);
   };
+
+
+
+  /**
+  * Handler for managing registrationPageNumber
+  */
+//  const registrationPageNumberHandler = () => {
+// 
+   // validate all the data and show errors, we
+   // ???
+    
+   // if no errors are there then only set the registration to page 2 
+//     setregistrationPageNumber(2);
+//  };
+
+  // to maintain the state of page number of registration user is looking at
+  // const [registrationPageNumber, setregistrationPageNumber] = useState(2);
 
   return (
     <div className="container">
@@ -137,13 +160,14 @@ const Signup = () => {
             </p>
           </div>
           <div className="form_btn">
-            <Link to="/signup">
+            {/* <Link to="/signup"> */}
               <input
                 type="button"
                 value="Continue"
-                onClick={(e) => handleFormSubmit(e)}
+                // onClick={(e) => handleFormSubmit(e)}
+                onClick ={(page)=>nextPage(page)}
               />
-            </Link>
+            {/* </Link> */}
           </div>
 
           <div className="hr_line">
@@ -180,7 +204,7 @@ const Signup = () => {
         </form>
       </div>
     </div>
-  );
+   );
 };
 
 export default Signup;

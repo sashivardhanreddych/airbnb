@@ -143,6 +143,21 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+
+
+
+
+// page not found error handling  middleware
+
+app.use("*", (req, res, next) => {
+  const error = {
+    status: 404,
+    message: API_ENDPOINT_NOT_FOUND_ERR,
+  };
+  next(error);
+});
+
+
 app.listen(PORT, () => {
   console.log(`successfully listening at port ${PORT}`);
 });

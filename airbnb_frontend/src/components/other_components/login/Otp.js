@@ -8,7 +8,7 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import OtpInput from "react-otp-input";
+// import OtpInput from "react-otp-input";
 
 
 /**
@@ -45,22 +45,22 @@ const Otp = () => {
             </Link>
           </span>
         </div>
-        <h4>Finish signing up</h4>
+        <h4 className="header_otp">Confirm your number</h4>
       </div>
         <p className="line">
           <span> </span>
         </p>
         <p></p>
         <div className ="form_container">
-        <div className="otp_box">
-            <OtpInput
-                name="otp"
-                value={values.otp}
-                onChange={(e) => handleChange(e)}
-                numInputs={6}
-                separator={<span>-</span>}
-            />
-        </div>
+            <p>Enter the code we've sent via SMS to 9010960607</p>
+            <div className="otp_box">
+                <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')"/>
+                <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')"/>
+                <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')"/>
+                <input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')"/>
+                <input type="text" id="fifth" maxlength="1" onkeyup="clickEvent(this,'sixth')" />
+                <input type="text" id="sixth" maxlength="1" />
+            </div>
         <p className="otp_text">Haven't received a code?<a href=".">More Options</a></p>
         </div>
     </div>

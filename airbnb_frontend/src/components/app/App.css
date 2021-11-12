@@ -32,6 +32,9 @@ h4{
   text-align:center;
   margin-left:35%;
 }
+.header_otp{
+  width:180px;
+}
 .form_container{
   width:500px;
   padding:30px 30px 20px 30px;
@@ -86,7 +89,8 @@ h4{
   margin:10px 0px;
 }
 .otp_text{
-  font-size:12px
+  font-size:12px;
+  margin:5px 0px 10px 0px;
 }
 
 
@@ -155,6 +159,27 @@ h4{
   margin:5px 0px 10px 0px;
   font-size:14px;
 }
+
+.otp_box{
+  display: flex;
+	justify-content: left;
+  
+}
+
+.otp_box input{
+  margin: 10px 10px;
+	height: 40px;
+	width: 45px;
+	border: none;
+	border-radius: 5px;
+	text-align: center;
+	font-family: arimo;
+	font-size: 1.2rem;
+	background: #eef2f3;
+  border:1px solid #9dbcf5;
+}
+
+
 
 .app-wrapper{
   background: #fff;
