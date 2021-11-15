@@ -6,9 +6,10 @@
  */
 
 import React, { useState } from "react";
+import SignupPersonal from "./SignupPersonal";
 import ValidationSignup from "./Validation";
-import { Link } from "react-router-dom";
-import Control from "../../controllers/Control";
+// import { Link } from "react-router-dom";
+// import Control from "../../controllers/Control";
 
 
 /**
@@ -27,7 +28,11 @@ const Signup = () => {
   });
 
     // Set the Errors of fields
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({
+    
+  });
+
+  
 
     // Updating the value of fields
   const handleChange = (event) => {
@@ -37,35 +42,41 @@ const Signup = () => {
     });
   };
     
+  // setErrors(ValidationSignup(values));
+
+    // multipage registration
+  const [visible,setVisible] = useState(true);
+
   // Submit the all values of fields and errors to render the browser
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    setErrors(ValidationSignup(values));
-    // alert(values);
-		// console.log(values);
-    let body = values;
-    console.log(body);
-		let url = "http://localhost:1111/login";
 
-		const success = (res) => {
-			console.log("Success", res);
-			alert("User created successfully")
-		};
+  // const handleFormSubmit = (event) => {
+  //   event.preventDefault();
+  //   setErrors(ValidationSignup(values));
+  //   // alert(values);
+	// 	// console.log(values);
+  //   let body = values;
+  //   console.log(body);
+	// 	let url = "http://localhost:1111/login";
 
-		const failure = (err) => {
-			console.log("Error", err);
-		};
+	// 	const success = (res) => {
+	// 		console.log("Success", res);
+	// 		alert("User created successfully")
+	// 	};
 
-		Control.sendRequest(
-			url,
-			"post",
-			values,
-			false,
-			null,
-			success,
-			failure
-		);
-  };
+	// 	const failure = (err) => {
+	// 		console.log("Error", err);
+	// 	};
+
+	// 	Control.sendRequest(
+	// 		url,
+	// 		"post",
+	// 		values,
+	// 		false,
+	// 		null,
+	// 		success,
+	// 		failure
+	// 	);
+  // };
 
 
   /**
@@ -84,6 +95,9 @@ const Signup = () => {
   // const [registrationPageNumber, setregistrationPageNumber] = useState(2);
 
   return (
+    <>
+    {visible ? (
+    <>
     <div className="container">
       <div className="header_form">
         <h4>Log in or sign up</h4>
@@ -100,6 +114,7 @@ const Signup = () => {
             <label>Country/Region</label>
             <select id="countries_select" name="countryCode" value={values.countryCode}
             onChange={(e) => handleChange(e)}>
+              {console.log(values.countryCode)}
               <option value=" ">Select Your Country Code</option>
               <option value="91IN">India (+91)</option>
               <option value="93AF">Afghanistan (+93)</option>
@@ -153,14 +168,14 @@ const Signup = () => {
           </div>
 
           <div className="form_btn">
-            <Link to="/signup">
+            {/* <Link to="/signup"> */}
               <input
                 type="button"
                 value="Continue"
-                onClick={(e) => handleFormSubmit(e)}
-                // onClick ={(page)=>nextPage(page)}
+                // onClick={(e) => handleFormSubmit(e)}
+                onClick ={(()=>setErrors(ValidationSignup(values)),()=> setVisible(false))}
               />
-            </Link>
+            {/* </Link> */}
           </div>
 
           <div className="hr_line">
@@ -202,6 +217,14 @@ const Signup = () => {
         </form>
       </div>
     </div>
+    
+    </>
+    ):(
+      <>
+      <SignupPersonal></SignupPersonal>
+      </>
+    )}
+    </>
    );
 };
 

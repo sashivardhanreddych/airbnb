@@ -6,7 +6,7 @@
  */
 
 import React, { useState } from "react";
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import ValidationSignup from "./Validation";
 import Control from "../../controllers/Control";
 
@@ -75,9 +75,10 @@ const SignupPersonal = () => {
       <div className="header_form">
         <div className="header_back">
           <span>
-            <Link to="/">
-             <i className="fas fa-chevron-left"></i>
-             </Link>
+            {/* <Link to="/"> */}
+            {/* onClick ={(()=> setVisible(true))} */}
+             <i className="fas fa-chevron-left" ></i>
+             {/* </Link> */}
           </span>
         </div>
         <h4>Finish signing up</h4>

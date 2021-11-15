@@ -9,7 +9,7 @@ import React from 'react'
 const PageNotFound = ()=> {
     return (
         <div>
-            <img src="%PUBLIC_URL%/404error.jpg" alt="Page Not Found Image"></img>
+            <img src={"./../assets/404error.jpg"} alt={"Page Not Found Image"}></img>
         </div>
     )
 }

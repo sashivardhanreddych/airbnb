@@ -20,7 +20,7 @@ const bodyParser = require("body-parser");
 
 // internal dependencies
 const index_main = require("../index.js");
-const User_login = require("../models/loginModel");
+// const User_login = require("../models/loginModel");
 const User_info = require("../models/signupModel");
 
 const PORT = 1111;
@@ -31,20 +31,20 @@ const PORT = 1111;
 * Post Schema on Login Page
 */
 
-router.post("/login", async (req, res) => {
- console.log(req.body);
- const users = new User_login({
-   //client side data
-   countryCode: req.body.countryCode,
-   phone: req.body.phone
- });
- try {
-   const a = await users.save();
-   res.json(a);
- } catch (err) {
-   res.send(err);
- }
-});
+// router.post("/login", async (req, res) => {
+//  console.log(req.body);
+//  const users = new User_login({
+//    //client side data
+//    countryCode: req.body.countryCode,
+//    phone: req.body.phone
+//  });
+//  try {
+//    const a = await users.save();
+//    res.json(a);
+//  } catch (err) {
+//    res.send(err);
+//  }
+// });
 
 
 
@@ -57,6 +57,8 @@ router.post("/signup", async (req, res) => {
   console.log(req.body);
   const users = new User_info({
     //client side data
+    countryCode: req.body.countryCode,
+    phone: req.body.phone,
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     birthdate: req.body.birthdate,
