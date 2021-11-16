@@ -14,7 +14,7 @@
      phone: { type: Number, required:true},
      firstname: { type: String, required:true},
      lastname: { type: String, required:true },
-     birthdate: {type: Date, required:true},
+     birthdate: {type: Date, required: true},
      email: { type: String, required:true }
  });
  const User_info=mongoose.model("User_info", userPersonalInfoSchema);
